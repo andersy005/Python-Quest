@@ -13,3 +13,10 @@ print(tinydict)
 print(tinydict.keys())
 print(tinydict.values())
 
+
+mydict ={"Name": 'Zara', "Age": 7, "Class": 'First'}
+print(mydict)
+mydict["Age"] = 10  # Update existing Entry
+mydict["School"] = "DPS school"  # Add new Entry
+
+print(mydict)

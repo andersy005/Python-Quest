@@ -2,6 +2,7 @@
   <dictionary name="Admin">
     <words>
       <w>mystr</w>
+      <w>printme</w>
     </words>
   </dictionary>
 </component>
