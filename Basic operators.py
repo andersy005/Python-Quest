@@ -1,14 +1,10 @@
+from swampy.TurtleWorld import *
 
-# Bitwise Operator
-a = 60
-b = 13
+world = TurtleWorld()
+bob = Turtle()
+print (bob)
+#wait_for_user()
 
-print(a & b)  # And
-print(a | b)  # Or
-
-print(a ^ b)  # XOR
-print(~a)     # NOT
-
-
-
-
+fd(bob,100)
+lt(bob)
+fd(bob,100)
