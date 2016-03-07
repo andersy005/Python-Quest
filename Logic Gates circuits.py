@@ -23,7 +23,7 @@ class BinaryGate(LogicGate):
     def getPinA(self):
         if self.PinA == None:
             return int(input("Enter Pin A input for gate "+ \
-            self.getLabel()+"-->"))
+            self.getLabel()+"->"))
             
         else:
             return self.pinA.getFrom().getOutput()
@@ -96,7 +96,25 @@ class NotGate(UnaryGate):
             return 0
         else:
             return 1
-            
+
+class NandGate(AndGate):
+
+    def performGateLogic(self):
+        if super(AndGate).performGateLogic() == 1:
+            return 0
+        
+        else:
+            return 1
+
+
+class NorGate(OrGate):
+
+    def performGateLogic(self):
+        if super(NorGate).performGateLogic() == 1:
+            return 0
+        else:
+            return  1
+
 
 class Connector:
     def __init__(self,fgate, tgate):
@@ -124,6 +142,9 @@ def main():
     
     c1 = Connector(g1,g2)
     print c1
+
+    g4 = NorGate("G4")
+    print g4.getOutput()
     
 main()
         
