@@ -61,6 +61,12 @@ class Fraction:
         firstnum = self.num * other.den
         secondnum = self.den * other.num
         return firstnum > secondnum
+
+    def getNum(self):
+        print "The Numerator is:",(self.num)
+
+    def getDen(self):
+        print "The Denominator is:",(self.den)
         
 def main():
     f1 = Fraction(2,3)
@@ -72,7 +78,9 @@ def main():
     print"multiplication", f1 * f2
     print"f1 less than f2", f1 < f2
     print"f1 greater than f2", f1 > f2
-    
+
+    f2.getNum()
+    f2.getDen()
     
 main()
 
