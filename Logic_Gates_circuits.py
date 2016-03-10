@@ -1,4 +1,4 @@
-class LogicGate:
+class LogicGate:
     
     def __init__(self,n):
         self.label = n

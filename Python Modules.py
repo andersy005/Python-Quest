@@ -2,7 +2,7 @@
 
 from math import*
 
-import fibonnaci
+import Fibonnaci
 
 y = sin(45)
 

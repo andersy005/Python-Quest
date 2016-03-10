@@ -8,7 +8,7 @@ def parChecker(symbolString):
 	while index < len(symbolString) and balanced:
 		symbol = symbolString[index]
 
-		if symbol == "(":
+		if symbol in "({[":
 			s.push(symbol)
 
 		else:
@@ -16,7 +16,9 @@ def parChecker(symbolString):
 				balanced = False
 
 			else:
-				s.pop()
+				top = s.pop()
+				if not matches(top,symbol):
+					balanced = False
 
 		index = index + 1
 
@@ -27,4 +29,11 @@ def parChecker(symbolString):
 		return False
 
 
-print parChecker('(()))(')
+def matches(open,close):
+    opens = "([{"
+    closers = ")]}"
+    return opens.index(open) == closers.index(close)
+
+
+print(parChecker('{{([][])}()}'))
+print(parChecker('[{()]'))

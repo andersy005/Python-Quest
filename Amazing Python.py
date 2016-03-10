@@ -24,7 +24,7 @@ def main():
     w = tList[0]
     w.up()
     #w.goto(0, 40)
-    #w.write("Welcome ", True, "center", "40pt Bold")
+    #w.write("Welcome ", True, "centC:\Python27er", "40pt Bold")
     #w.goto(0, -35)
     #w.write("World of Python ", True, "center", "20pt Bold")
 
