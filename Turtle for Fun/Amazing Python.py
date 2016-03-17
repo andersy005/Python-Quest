@@ -17,16 +17,18 @@ def main():
         wn.tracer(30, 0)
         tList.append(nt)  # Add the new turtle to the list
         head += 360 / numTurtles
+    wn.exitonclick()
 
     for i in range(100):
         moveTurtles(tList, 15, i)
 
     w = tList[0]
     w.up()
-    #w.goto(0, 40)
-    #w.write("Welcome ", True, "center", "40pt Bold")
-    #w.goto(0, -35)
-    #w.write("World of Python ", True, "center", "20pt Bold")
+    w.goto(0, 40)
+    w.write("Welcome ", True, "center", "40pt Bold")
+    w.goto(0, -35)
+    w.write("World of Python ", True, "center", "20pt Bold")
+
 
 
 def moveTurtles(turtleList, dist, angle):
