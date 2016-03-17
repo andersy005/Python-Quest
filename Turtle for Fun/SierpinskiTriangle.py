@@ -8,7 +8,7 @@ def drawTriangle(points,color,siri):
 	siri.begin_fill()
 	siri.goto(points[1][0], points[1][1])
 	siri.goto(points[2][0], points[2][1])
-	siri.goto(points[0][0], points[0][1])
+	siri.goto(points[0][0], points[0][1])  
 	siri.end_fill()
 
 
@@ -41,4 +41,4 @@ def main():
 	sierpinski(mypoints,3,siri)
 	myWin.exitonclick()
 
-main()
+main
