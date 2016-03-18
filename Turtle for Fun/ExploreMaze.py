@@ -30,14 +30,12 @@ class Maze:
 
         self.rowsInMaze = rowsInMaze
         self.columsInMaze = columsInMaze
-        self.xTranslate = - columsInMaze / 2
-        self.yTranslate = rowsInMaze / 2
+        self.xTranslate = -columsInMaze/2
+        self.yTranslate = rowsInMaze/2
         self.t = turtle.Turtle()
         self.t.shape('turtle')
-        #setup(width = 600, height = 600)
-        self.wn = turtle.Turtle()
-        self.wn.setworldcoordinates(-(columsInMaze - 1)/2 - .5, -(rowsInMaze - 1)/2 - .5, (columsInMaze - 1)/2 + .5, (rowsInMaze - 1)/2 + .5)
-
+        self.wn = turtle.Screen()
+        self.wn.setworldcoordinates(-(columsInMaze-1)/2-.5,-(rowsInMaze-1)/2-.5,(columsInMaze-1)/2+.5,(rowsInMaze-1)/2+.5)
 
     def drawMaze(self):
         self.t.speed(10)
@@ -65,7 +63,7 @@ class Maze:
 
         for i in range(4):
             self.t.forward(1)
-            self.right(90)
+            self.t.right(90)
 
         self.t.end_fill()
 
@@ -101,7 +99,7 @@ class Maze:
         return (row == 0 or
                 row == self.rowsInMaze-1 or
                 col == 0 or
-                col == self.columnsInMaze-1 )
+                col == self.columsInMaze-1 )
 
     def __getitem__(self,idx):
         return self.mazelist[idx]
@@ -152,5 +150,9 @@ def searchFrom(maze, startRow , startColumn):
     return found
 
 
+myMaze = Maze('maze2.txt')
+myMaze.drawMaze()
+myMaze.updatePosition(myMaze.startRow,myMaze.startCol)
 
+searchFrom(myMaze, myMaze.startRow, myMaze.startCol)
 
