@@ -34,6 +34,59 @@ class BinarySearchTree:
 			else:
 				currentNode.rightChild = TreeNode(key, val, parent = currentNode)
 
+	def __setitem__(self,k,v):
+		self.put(k, v)
+
+	def get(self, key):
+		if self.root:
+			res = self._get(key, self.root)
+			if res:
+				return res.payload
+			else:
+				return None
+
+	def _get(self, key, currentNode):
+		if not currentNode:
+			return None
+		elif currentNode.key == key:
+			return currentNode
+		elif key < currentNode.key:
+			return self._get(key, currentNode.leftChild)
+		else:
+			return self._get(key, currentNode.rightChild)
+
+
+	def __getitem__(self, key):
+		return self.get(key)
+
+	def __contains__(self, key):
+		if self._get(key, self.root):
+			return True
+		else:
+			return False
+
+	def delete(self, key):
+		if self.size > 1:
+			nodeToRemove = self._get(key, self.root)
+			if nodeToRemove:
+				self.remove(nodeToRemove)
+				self.size = self.size - 1
+
+			else:
+				raise KeyError('Error, key not in Tree')
+
+		elif self.size == 1 and self.root.key == key:
+			self.root = None
+			self.size = self.size - 1
+
+		else:
+			raise KeyError('Error, key not in Tree')
+
+	def __delitem__(self, key):
+		self.delete(key)
+
+
+
 
 class TreeNode:
 	def __init__(self, key, val, left = None, right = None, parent = None):
