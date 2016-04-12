@@ -85,7 +85,7 @@ class BinarySearchTree:
 
 		else:
 			if currentNode.hasRightChild():
-				self._put(key, val, currentNode.right)
+				self._put(key, val, currentNode.rightChild)
 
 			else:
 				currentNode.rightChild = TreeNode(key, val, parent = currentNode)
