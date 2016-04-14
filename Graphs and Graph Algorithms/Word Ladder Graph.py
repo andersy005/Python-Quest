@@ -1,4 +1,4 @@
-from pythonds.graphs import Graph 
+from pythonds.graphs import Graph, Vertex
 
 def buildGraph(wordFile):
 	d = {}
@@ -25,4 +25,15 @@ def buildGraph(wordFile):
 
 	return g
 
-	
+
+def traverse(y):
+	''' follow the predecessor links to print out the word ladder'''
+	x = y
+
+	while (x.getPred()):
+		print(x.getId())
+		x = x.getPred()
+
+	print(x.getId())
+
+traverse(g.getVertex('sage'))
