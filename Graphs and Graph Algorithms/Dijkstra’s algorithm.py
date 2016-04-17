@@ -13,4 +13,4 @@ def dijkstra(aGraph, start):
 			if newDist < nextVert.getDistance():
 				nextVert.setDistance(newDist)
 				nextVert.setPred(currentVert)
-				pq.decreasekey(nextVert, newDist)
+				pq.decreasekey(nextVert, newDistf)
