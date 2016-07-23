@@ -1,0 +1,4 @@
+Flask
+Flask-Script
+
+# run pip install -r requirements.txt
