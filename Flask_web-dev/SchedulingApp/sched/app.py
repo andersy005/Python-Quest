@@ -20,15 +20,17 @@ def appointment_list():
 
 @app.route('/appointments/<int:appointment_id>/')
 def appointment_detail(appointment_id):
-    return 'Detail of appointment   #{}.'.format(appointment_id)
+    edit_url = url_for('appointment_edit', appointment_id=appointment_id)
+    #return 'Detail of appointment   #{}.'.format(appointment_id)
+    return edit_url
 
 
-@app.route('/appointments/<int:appointment_id>/edit', methods=['GET', 'POST'])
+@app.route('/appointments/<int:appointment_id>/edit/', methods=['GET', 'POST'])
 def appointment_edit(appointment_id):
     return 'Form to edit appointment #.'.format(appointment_id)
 
 
-@app.route('/appointments/<int:appointment_id>/create', methods=['GET', 'POST'])
+@app.route('/appointments/create/', methods=['GET', 'POST'])
 def appointment_create():
     return 'Form to create a new appointment.'
 
