@@ -14,3 +14,18 @@ class Node(object):
 node1 = None
 node2 = Node("A",None)
 node3 = Node("B", node2)
+
+print '*' * 50
+# Adding nodes to the a linked list
+
+head = None
+
+for count in range(1,6):
+    head = Node(count, head)
+    
+# Print the contents of the structure
+
+while head != None:
+    print(head.data)
+    head = head.next
+    
