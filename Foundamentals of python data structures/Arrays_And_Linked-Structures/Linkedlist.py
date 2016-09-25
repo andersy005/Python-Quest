@@ -23,9 +23,33 @@ head = None
 for count in range(1,6):
     head = Node(count, head)
     
-# Print the contents of the structure
-
-while head != None:
-    print(head.data)
-    head = head.next
     
+# Print the contents of the structure
+def printList(head):
+
+    while head != None:
+        print(head.data)
+        head = head.next
+printList(head)
+
+print '*' * 50
+
+
+
+# Replacement
+def replace(head, targetItem, newItem):
+    current = head
+
+    while current != None and targetItem != current.data:
+        current = current.next
+
+    if current != None:
+        current.data = newItem
+        return True
+
+    else:
+        return False
+
+replace(head,5, 10)
+printList(head)
+
