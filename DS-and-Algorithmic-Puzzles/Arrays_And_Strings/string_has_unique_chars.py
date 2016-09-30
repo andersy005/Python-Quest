@@ -8,7 +8,7 @@ def hasUniqueChars(string):
     chars = [None] * 256
     for i in range(len(string)):
         val = string[i]
-        print val
+    
 
         if chars[ord(val)]:
             return False
@@ -20,7 +20,7 @@ def hasUniqueChars(string):
 
 print(hasUniqueChars("brenda"))
 
-
+# uses a dictionary instead of a list
 def hasUniqueChars1(string):
     if len(string) > 128:
         return False
@@ -28,7 +28,6 @@ def hasUniqueChars1(string):
     chars = {}
     for i in range(len(string)):
         val = string[i]
-        print val
 
         if val in chars:
             return False
@@ -39,3 +38,22 @@ def hasUniqueChars1(string):
 
 
 print(hasUniqueChars1("brenda"))
+
+print '#' * 70
+
+
+# the following does it in constant space and uses a bit vector
+def hasUniqueChars2(string):
+    checker = 0
+    for i in range(len(string)):
+        val = ord(string[i]) - ord('a')
+        print val
+
+        if (checker & (1 << val)) > 0 :
+            return False
+
+        checker |= (1 << val)
+
+    return True
+
+print(hasUniqueChars2("brenda"))
