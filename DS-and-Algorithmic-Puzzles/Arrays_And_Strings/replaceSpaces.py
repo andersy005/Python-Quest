@@ -3,7 +3,7 @@
 def replaceSpaces(string):
     
     newString = ""
-    for char in string:
+    for char in string.strip(" "):
         if char != " ":
             newString += char
 
@@ -13,4 +13,4 @@ def replaceSpaces(string):
     return newString
 
 
-print(replaceSpaces("ander son"))
+print(replaceSpaces(" Mr John Smith  "))
