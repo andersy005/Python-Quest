@@ -6,8 +6,9 @@ def permutationsOfStrings(string1, string2):
         return False
 
     else:
-         lista = list(string1)
-         listb = list(string2)
+         lista = list(string1.lower())
+         listb = list(string2.lower())
+         
          
          if lista.sort() == listb.sort():
              return True
@@ -15,4 +16,4 @@ def permutationsOfStrings(string1, string2):
          else:
             return False 
          
-print(permutationsOfStrings("odg", "dog"))
+print(permutationsOfStrings("odg", "Dog"))
