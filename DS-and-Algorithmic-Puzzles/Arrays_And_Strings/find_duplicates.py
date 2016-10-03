@@ -32,6 +32,8 @@ print(findDuplicates([2,3,5], [1,2,3,4]))
 # Time Complexity is O(n +m)
 
 
+
+
 # When One array is much longer than the other we should avoid a liner iteration over the longer one
 # Since the arrays are sorted, we can do a linear iteration over the shorter and perform binary search for it on the longer array
 
@@ -66,3 +68,4 @@ def binarySearch(arr, num):
     
 
 print(findDuplicates([2,3,5], [1,2,3,4]))
+# Runtime Complexity: O(n*log m). Since m >> n and m >>log m, O(n*log m) should be asymptotically better than O(n+m).
