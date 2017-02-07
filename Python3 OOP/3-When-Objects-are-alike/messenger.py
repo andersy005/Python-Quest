@@ -24,4 +24,7 @@ class Supplier(Contact):
         print("If this were a real system we would send ", "{} order to {}".format(order, self.name))
 
 
-
+class Friend(Contact):
+    def __init__(self, name, email, phone):
+        super().__init__(name, email)
+        self.phone = phone 
